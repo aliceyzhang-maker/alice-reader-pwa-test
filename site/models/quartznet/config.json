@@ -1,0 +1,172 @@
+{
+  "architecture": "quartznet15x5",
+  "sampleRate": 16000,
+  "melBins": 64,
+  "samplesPerFrame": 320,
+  "blank": 28,
+  "classes": 29,
+  "blocks": [
+    {
+      "kernel": 33,
+      "stride": 2,
+      "dilation": 1,
+      "repeat": 1,
+      "residual": false,
+      "in": 64,
+      "out": 256
+    },
+    {
+      "kernel": 33,
+      "stride": 1,
+      "dilation": 1,
+      "repeat": 5,
+      "residual": true,
+      "in": 256,
+      "out": 256
+    },
+    {
+      "kernel": 33,
+      "stride": 1,
+      "dilation": 1,
+      "repeat": 5,
+      "residual": true,
+      "in": 256,
+      "out": 256
+    },
+    {
+      "kernel": 33,
+      "stride": 1,
+      "dilation": 1,
+      "repeat": 5,
+      "residual": true,
+      "in": 256,
+      "out": 256
+    },
+    {
+      "kernel": 39,
+      "stride": 1,
+      "dilation": 1,
+      "repeat": 5,
+      "residual": true,
+      "in": 256,
+      "out": 256
+    },
+    {
+      "kernel": 39,
+      "stride": 1,
+      "dilation": 1,
+      "repeat": 5,
+      "residual": true,
+      "in": 256,
+      "out": 256
+    },
+    {
+      "kernel": 39,
+      "stride": 1,
+      "dilation": 1,
+      "repeat": 5,
+      "residual": true,
+      "in": 256,
+      "out": 256
+    },
+    {
+      "kernel": 51,
+      "stride": 1,
+      "dilation": 1,
+      "repeat": 5,
+      "residual": true,
+      "in": 256,
+      "out": 512
+    },
+    {
+      "kernel": 51,
+      "stride": 1,
+      "dilation": 1,
+      "repeat": 5,
+      "residual": true,
+      "in": 512,
+      "out": 512
+    },
+    {
+      "kernel": 51,
+      "stride": 1,
+      "dilation": 1,
+      "repeat": 5,
+      "residual": true,
+      "in": 512,
+      "out": 512
+    },
+    {
+      "kernel": 63,
+      "stride": 1,
+      "dilation": 1,
+      "repeat": 5,
+      "residual": true,
+      "in": 512,
+      "out": 512
+    },
+    {
+      "kernel": 63,
+      "stride": 1,
+      "dilation": 1,
+      "repeat": 5,
+      "residual": true,
+      "in": 512,
+      "out": 512
+    },
+    {
+      "kernel": 63,
+      "stride": 1,
+      "dilation": 1,
+      "repeat": 5,
+      "residual": true,
+      "in": 512,
+      "out": 512
+    },
+    {
+      "kernel": 75,
+      "stride": 1,
+      "dilation": 1,
+      "repeat": 5,
+      "residual": true,
+      "in": 512,
+      "out": 512
+    },
+    {
+      "kernel": 75,
+      "stride": 1,
+      "dilation": 1,
+      "repeat": 5,
+      "residual": true,
+      "in": 512,
+      "out": 512
+    },
+    {
+      "kernel": 75,
+      "stride": 1,
+      "dilation": 1,
+      "repeat": 5,
+      "residual": true,
+      "in": 512,
+      "out": 512
+    },
+    {
+      "kernel": 87,
+      "stride": 1,
+      "dilation": 2,
+      "repeat": 1,
+      "residual": false,
+      "in": 512,
+      "out": 512
+    },
+    {
+      "kernel": 1,
+      "stride": 1,
+      "dilation": 1,
+      "repeat": 1,
+      "residual": false,
+      "out": 1024,
+      "in": 512
+    }
+  ]
+}

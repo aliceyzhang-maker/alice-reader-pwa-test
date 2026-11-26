@@ -1,0 +1,35 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'self' blob: data:; script-src 'self' blob: 'wasm-unsafe-eval'; style-src 'self' blob: 'unsafe-inline'; connect-src 'self'; worker-src 'self' blob:; object-src 'none'; form-action 'none'; base-uri 'self'"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#eee9dd"><link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./icon.png"><link rel="apple-touch-icon" href="./icon.png"><link rel="stylesheet" href="./style.css"><title>Alice · PWA 验证</title></head><body>
+<main>
+<h1>Alice · PWA 验证</h1>
+<p id="cap" role="status">检测浏览器能力…</p>
+<details open id="setup"><summary>设备本地文件与匹配</summary>
+<form id="import">
+<label>EPUB <input id="epub" type="file" accept=".epub" required></label>
+<label>M4B <input id="m4b" type="file" accept=".m4b,.m4a,audio/mp4" required></label>
+<button>导入此设备</button>
+</form>
+<p id="storage" role="status"></p>
+<div id="tools" hidden>
+<button id="persist" type="button">申请持久存储</button>
+<button id="validate" type="button">校验音频 SHA‑256</button>
+<button id="original" type="button">EPUB 原版式</button>
+<form id="match">
+<label>引擎 <select id="engine"><option value="ctc-gpu">stalign CTC · WebGPU</option><option value="ctc-cpu">stalign CTC · WASM</option><option value="whisper-gpu">Whisper tiny.en · WebGPU</option><option value="whisper-cpu">Whisper tiny.en · WASM</option></select></label>
+<label>音频起点（秒） <input id="start" type="number" value="62.694" step=".001" min="0" required></label>
+<label>终点（秒） <input id="end" type="number" value="122.694" step=".001" min=".001" required></label>
+<button id="run">开始 / 恢复匹配</button><button id="stop" type="button" disabled>本块完成后暂停</button>
+</form>
+<p class="muted">先选下方正文对应章节。默认区间为 Catching Fire 第 1 章最初 60 秒。</p>
+<button id="report" type="button" disabled>导出本次区间和指标</button>
+</div>
+<p id="job" role="status"></p>
+</details>
+<div id="book" hidden>
+<label>正文目录 <select id="sections" aria-label="正文目录"></select></label>
+<div id="original-wrap" hidden><button id="previous" type="button">上页</button><button id="next" type="button">下页</button></div>
+<article id="text" lang="en"></article>
+</div>
+</main>
+<footer id="player" hidden><audio id="audio" controls preload="metadata"></audio><span id="point"></span></footer>
+<script type="module" src="./app.mjs"></script>
+</body></html>
